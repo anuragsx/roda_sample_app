@@ -8,24 +8,24 @@ class Myapp < Roda
   #plugin :head	
   route do |r|
     #r.root do
-     # "Hello!"
+    # "Hello!"
     #end
-  
+    
 
 
 
-  r.root do
-    view("homepage")
+    r.root do
+      view("homepage")
+    end
+
+    r.get "about" do
+      @about_me = "Hi This Page is all about Anurag Saxena."
+      view("about")
+    end
+
+    r.get "contact" do
+      view("contact")
+    end
+
   end
-
-  r.get "about" do
-  	@about_me = "Hi This Page is all about Anurag Saxena."
-    view("about")
-  end
-
-  r.get "contact" do
-    view("contact")
-  end
-
-end
 end
